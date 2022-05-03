@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: raftam
+spec:
+  rules:
+  - host: "raftam.behroozam.com"
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: raftam
+            port:
+              number: 80
