@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: raftam
+  labels:
+    app: raftam
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: raftam
+  template:
+    metadata:
+      labels:
+        app: raftam
+    spec:
+      containers:
+        - image: behroozam/raftam:latest
+          imagePullPolicy: Always
+          name: raftam
